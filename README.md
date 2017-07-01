@@ -24,7 +24,7 @@ Accept the default location (`/home/you/.ssh/id_rsa`)
 ###  Adding your SSH key to the ssh-agent
 Start the ssh-agent in the background.
 
-````eval "$(ssh-agent -s)"```
+```eval "$(ssh-agent -s)"```
 
 Add your SSH private key to the ssh-agent.
 
