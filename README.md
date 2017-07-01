@@ -7,9 +7,11 @@ I use Linux for my GIT client. Beanstalk has [instructions](http://guides.beanst
 
 
 ### Check if you already have an SSH Key
+
 ```ls -a ~/.ssh```
 
 if you do, you will see output like:
+
 ```.  ..  id_rsa  id_rsa.pub  known_hosts```
 
 You can choose to use your existing ID or create a new one.
@@ -18,8 +20,7 @@ You can choose to use your existing ID or create a new one.
 
 ```ssh-keygen -t rsa -b 4096 -C "your_email@example.com"```
 
-This creates a new ssh key, using the provided email as a label.
-Accept the default location (`/home/you/.ssh/id_rsa`)
+This creates a new ssh key, using the provided email as a label. Accept the default location (`/home/you/.ssh/id_rsa`)
 
 ###  Adding your SSH key to the ssh-agent
 Start the ssh-agent in the background.
@@ -54,15 +55,26 @@ Copy your key to clipboard
 * If prompted, confirm your GitHub password.
 
 ### Testing your SSH connection
+
 In your teminal run the following:
 
 ```ssh -T git@github.com```
 
 At the next prompt type `yes` and press `Enter`, you should get output like this:
 
-```Hi username! You've successfully authenticated, but GitHub does not
-provide shell access.```
+```Hi username! You've successfully authenticated, but GitHub does not provide shell access.```
 
 ## Start working
-From this point you should be able to start working. Here are some good tutorials on using GIT if you need them.
+
+From this point you should be able to start working. 
+
+### Set up your name and email address:
+
+```
+git config --global user.name "User Name"
+git config --global user.email "username@example.com"
+```
+
+Here are some good tutorials on using GIT if you need them.
+
 * [Git Basics](https://youtu.be/8oRjP8yj2Wo?list=PLg7s6cbtAD165JTRsXh8ofwRw0PqUnkVH)
