@@ -31,12 +31,13 @@ If you already have keys, you will see:
 `.    ..  id_rsa  id_rsa.pub  known_hosts`
 
 ##### Decide if you want a new key for Git use or keep the current one.
-I like to have things segregated so I have a specific key for Git use on each of my machines I work from.
+I like to have things segregated so I have a specific key for Git use on each of my machines I work from. For using multiple keys, use this [Atlassian Documentation](https://confluence.atlassian.com/bitbucket/configure-multiple-ssh-identities-for-gitbash-mac-osx-linux-271943168.html) for reference.
 
 #### Creating a new SSH Key
 I use 4096 bits for all my keys, you can change that if you need.
 * Read a bit on this from [Debian](https://lists.debian.org/debian-devel-announce/2010/09/msg00003.html) and this overview from [SSH](https://www.ssh.com/ssh/keygen/)
-`ssh-keygen -t -rsa -b 4096 -C "email@example.com"`
+
+`ssh-keygen -t rsa -b 4096 -C "email@example.com"`
 
 #### Adding your SSH Key to the ssh-agent
 ###### Start the SSH Agent in the background
@@ -44,6 +45,23 @@ I use 4096 bits for all my keys, you can change that if you need.
 
 ###### Add the key
 `ssh-add ~/.ssh/id_rsa`
+
+###### Autoload Keys into your keychain (for Mac)
+`vi ~/.ssh/config`
+
+Paste in the following
+
+```
+Host *
+ AddKeysToAgent yes
+ UseKeychain yes
+ IdentityFile ~/.ssh/id_rsa
+```
+
+Next, run the following
+
+`ssh-add -K ~/.ssh/id_rsa`
+
 
 ###### List all managed keys
 `ssh-add -l`
