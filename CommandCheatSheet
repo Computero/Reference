@@ -1,4 +1,4 @@
-# GIT Command CheatSheet
+# GitHub Command CheatSheet
 
 ### Create a new local repository
 From inside the directory you want to use for the repo
@@ -7,7 +7,7 @@ From inside the directory you want to use for the repo
 ### Check out a repository
 `git clone username@host:/path/to/repository`
 
-### Add files 
+### Add files
 Add one or more files to staging
 `git add <filename>`
 or
@@ -16,11 +16,11 @@ or
 ### Commit Changes
 `git commit -am "Commit message"`
 
-### Push 
+### Push
 Send changes to the master branch of your remote repository
 `git push origin master`
 
-### Status 
+### Status
 List changes you still need to add or commit
 `git status`
 
