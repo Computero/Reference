@@ -27,30 +27,32 @@ Since I'm working from command-line, I will need to setup SSH Keys.
 `ls -a ~/.ssh`
 
 If you already have keys, you will see:
+
 `.    ..  id_rsa  id_rsa.pub  known_hosts`
 
 ##### Decide if you want a new key for Git use or keep the current one.
 I like to have things segregated so I have a specific key for Git use on each of my machines I work from.
 
 #### Creating a new SSH Key
-I use 4096 bits for all my keys, you can change that if you need. Read a bit on this from [Debian](https://lists.debian.org/debian-devel-announce/2010/09/msg00003.html) and this overview from [SSH](https://www.ssh.com/ssh/keygen/)
+I use 4096 bits for all my keys, you can change that if you need.
+* Read a bit on this from [Debian](https://lists.debian.org/debian-devel-announce/2010/09/msg00003.html) and this overview from [SSH](https://www.ssh.com/ssh/keygen/)
 `ssh-keygen -t -rsa -b 4096 -C "email@example.com"`
 
 #### Adding your SSH Key to the ssh-agent
-Start the SSH Agent in the background
+###### Start the SSH Agent in the background
 `eval "$(ssh-agent -s)"`
 
-Add the key
+###### Add the key
 `ssh-add ~/.ssh/id_rsa`
 
-List all managed keys
+###### List all managed keys
 `ssh-add -l`
 
 #### Adding your SSH Key to GitHub
-Install xclip to make copying easier
+###### Install xclip to make copying easier
 `sudo apt update && sudo apt install xclip`
 
-Copy the key to the clipboard
+###### Copy the key to the clipboard
 `xclip -sel clip < ~/.ssh/id_rsa.pub`
 
 * Head over to git hub and sign in.
@@ -63,9 +65,11 @@ Copy the key to the clipboard
 
 #### Testing your SSH connection
 Run the following in a Terminal
+
 `ssh -T git@github.com`
 
 At the prompt, type `yes` and press enter, you should get the following line:
+
 `Hi username! You've successfully authenticated, but GitHub does not provide shell access.`
 
 ### Tell Git who is working
