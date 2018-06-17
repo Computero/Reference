@@ -92,6 +92,7 @@ At the prompt, type `yes` and press enter, you should get the following line:
 
 ### Tell Git who is working
 `git config --global user.name "User Name"`
+
 `git config --global user.email "email@example.com"`
 
 * Use `--global` to set the configuration for all projects. If `git config` is used without `--global` and run inside a project directory, the settings are set for the specific project.
